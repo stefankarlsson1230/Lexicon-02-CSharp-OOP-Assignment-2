@@ -75,6 +75,7 @@ Teacher responsible for the course, a list of students enrolled to it and a name
 - Teacher : (Datatype Teacher)
 - Students : (Datatype List\<Student\>)
 
+**I did add a constructor**
 
 ## Part 4 - Creating the Grade class 
 The grade class will hold information about a grade that a student can acquire during
