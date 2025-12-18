@@ -94,6 +94,7 @@ the grades A-F, where A is the highest and F is the lowest.
 and a message depending on the Grading! What the message says, is up to you, but keep 
 it moderate J Tip: Use a switch-statement to check which grade the user has! 
 
+**(I used the property name GradeAcquired instead of Grade, and I added a Constructor)**
 
 ## Part 5 – Refactor common behaviour into a new class  
 As you may have notices, the Teacher and Student classes contains a lot of redundant 
