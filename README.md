@@ -53,3 +53,91 @@ birth you can subtract two dates two get a TimeSpan object that represent the ti
 between the two dates. The TimeSpan contains TotalDays which contains the number of 
 days between the dates. You can use this to calculate the number of years!
 
+
+## Part 2. Creating the teacher class 
+ 
+### Properties 
+Like the student class, implement the properties first name, lastname, year of birth 
+and instead of StudentId, create the property TeacherId instead. 
+
+### Methods 
+Implement the same methods as the student class, that is a Constructor, a ToString() 
+method and a GetAge() method in the same way.
+
+
+## Part 3 – Creating the Course class 
+The Course class contains information about a specific course, information like the 
+Teacher responsible for the course, a list of students enrolled to it and a name. 
+
+### Properties 
+- CourseId
+- Name
+- Teacher : (Datatype Teacher)
+- Students : (Datatype List\<Student\>)
+
+
+## Part 4 - Creating the Grade class 
+The grade class will hold information about a grade that a student can acquire during
+his time in the school!
+
+### Properties 
+- GradeId
+- Course : (Datatype Course)
+- Student : (Datatype Student)
+- DateAcquired
+- Grade - This should be implemented as an enum-type. The members of the enum should be 
+the grades A-F, where A is the highest and F is the lowest. 
+
+### Methods 
+- ToString() - Override the default ToString()-method to return the name of the grade 
+and a message depending on the Grading! What the message says, is up to you, but keep 
+it moderate J Tip: Use a switch-statement to check which grade the user has! 
+
+
+## Part 5 – Refactor common behaviour into a new class  
+As you may have notices, the Teacher and Student classes contains a lot of redundant 
+(repeating) information. So you are now going to break out the common properties 
+and methods into a Person class and then let the Teacher and Student class inherit 
+from it. Look through both the Student and Teacher class and see which information 
+could be shared and put these into the Person class.
+
+
+## Part 6 – Creating the School class
+This class will serve as the common interface between the Students, Teachers, Course 
+and Grades.
+
+### Properties 
+- Name
+- Students : (Datatype List\<Student\>)
+- Courses : (Datatype Dictionary\<String, Course\>)
+- Teachers : (Datatype List\<Teacher\>)
+- Grades : (Datatype List\<Grade\>)
+
+### Methods 
+- HasCourse( CourseId ) - Checks whether a course exists with the given (true/false)
+- AddCourse( Course ) - Add a new course to the school, if the course already exist, 
+throw an exception (If the course ID exists in the list of courses). If the course 
+added does not have a courseId, throw an exception.
+- RemoveCourse( CourseId ) - Removes a course with given course ID. If the course 
+does not exist, throw an exception.
+- IsSchoolEnrolled( StudentId ) - Check if a student is enrolled to the school (true/false)
+- IsCourseEnrolled( CourseId, StudentId ) - Checks whether the student is enrolled 
+to a given course. (true/false)
+- EnrollCourse( CourseId , StudentId) - Enrols a student to a given course. If the 
+student is already enrolled, throw an exception. A requirement here is that the student 
+is enrolled to the school, and the course exists in the school.
+- EnrolSchool(Student) - Enrols the student to the school. If the student is already 
+enrolled, throw an exception. The studentId determines whether the student is enrolled 
+or not.
+- WithdrawFromSchool(StudentId) - Withdraws the student from the school, by removing 
+him/her from the schools list of students. If the students is not previously enrolled, 
+throw an exception.
+- WithdrawFromCourse(CourseId, StudentId) - Removes a student from a given course, 
+if the course or the student does not exist in the school, throw an exception.
+- SetGrade(Grading, CourseId, StudentId) - Sets the students grade for a specific 
+course. If the grade does exist, override the given value of that grade with the 
+new one. Note, that you will only provide an enum value. The grade object should be 
+created in the method. If the course or student does not exist, throw an exception.
+- RemoveGrade(CourseId, StudentId) - Removes the grade for the given user!
+- GetGrades(StudentId) - Returns the subset of the grades belonging to the given student 
+
