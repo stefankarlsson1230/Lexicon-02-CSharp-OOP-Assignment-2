@@ -141,3 +141,92 @@ created in the method. If the course or student does not exist, throw an excepti
 - RemoveGrade(CourseId, StudentId) - Removes the grade for the given user!
 - GetGrades(StudentId) - Returns the subset of the grades belonging to the given student 
 
+
+## Part 7 - The console program
+
+The next part will be to create the console program that the user will use to interact 
+with the school application.
+
+### Displaying
+Create methods for displaying teachers, students, grades and course (separate) onto the 
+console. When for example displaying teachers, you should output one teacher on each 
+row in the console with all the properties in a nice format. Make one method for each 
+case.
+
+### Adding 
+Create methods for adding a student, teacher, course to the school. When invoking a 
+method, the method should stepwise ask for each property that is needed. If everything 
+is inputted correctly, add the new object to the school.
+
+Example for adding a student is:
+
+1. Ask for a first name
+2. Ask for a last name
+3. Ask for a date of birth (You can use DateTime.Parse/TryParse to convert a textual date time into a DateTime object like: DateTime.Parse(“1983-08-22”))
+4. Let your program generate a new student ID
+5. Create a new Student object with the values
+6. Add the object to the school
+
+If you look back, we did create methods in the School class to enrol a new student to 
+the school. That would be the business logic. The method above is the presentation 
+“logic” for adding a new student from a console window. This means, that we could take 
+the classes created in previous steps and use them in a Windows application or an 
+ASP.NET web application and only have to create the presentation part for each 
+application type, but still keep our business logic the same. In a web application we 
+would instead add a new student by letting a user input the values into textboxes. 
+By not letting the classes we created know anything about the console, we achieve what 
+is called loose coupling which is something we want to strive for as programmers. 
+This way we can easier reuse components that we create!
+
+### Remove/Withdraw 
+Add the functionality to let the user remove a course from the school, or withdrawing 
+a student from the school. What could be done here, is to first use one of the methods 
+you created for displaying all the students in the school. That should then display 
+all students together with their ID numbers. Then let the user input the number to 
+withdraw the student from the school.
+
+Example:
+1. Show all the students (So that the user knows which students exists)
+2. Let the user input a student id 
+3. Check if the student id is actually in the list
+4. Remove the student with that ID
+
+### Menu
+Create a main menu to so that the user can choose what he want to do. Provide a list 
+of options he can do.
+
+Example menu:
+
+1. Display all teachers
+2. Display all students
+3. Display all courses
+4. Add a teacher
+5. Add a student
+6. Add a course
+7. Withdraw a student
+8. Withdraw a teacher
+9. Withdraw a course
+10. Show grades
+11. Remove grade
+12. Set grade
+
+This menu could get kind of long, so here is a good idea to break it down into smaller 
+pieces. Example would be:
+
+Main menu:
+
+1. Display teachers/students/courses
+2. Add teacher/student/course
+3. Withdraw student/teacher/course
+4. Show/Remove/Set grades
+
+Choosing number 1 would present the user with a sub menu like:
+
+1. Display teachers
+2. Display students
+3. Display courses
+
+As of now, our classes contains more methods than we have created presentation for. 
+If you want to, feel free to create any menu option that you feel is missing!
+
+Good luck!
