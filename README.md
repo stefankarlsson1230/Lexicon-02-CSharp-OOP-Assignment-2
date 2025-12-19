@@ -120,3 +120,92 @@ Students should only be added or removed via the School class.
 	- Returns grade and a short message depending on the value
 	- Use a switch statement
 
+
+## Part 5 – Refactor into Person Class
+Create a base class Person.
+
+### Properties
+- string FirstName
+- string LastName
+- DateTime DateOfBirth
+
+### Methods
+- int GetAge()
+- override string ToString()
+
+Both Student and Teacher must inherit from Person.
+
+
+## Part 6 – School Class
+This class contains all business logic.
+
+### Properties
+- string Name
+- List\<Student\> Students
+- List\<Teacher\> Teachers
+- Dictionary\<Guid, Course\> Courses
+- List\<Grade\> Grades
+
+### Methods
+**Course Management**
+- bool HasCourse(Guid courseId)
+- void AddCourse(Course course)
+- void RemoveCourse(Guid courseId)
+
+**Student Management**
+- void EnrollStudent(Student student)
+- void WithdrawStudent(Guid studentId)
+- bool IsStudentEnrolled(Guid studentId)
+
+**Course Enrollment**
+- bool IsStudentEnrolledInCourse(Guid courseId, Guid studentId)
+- void EnrollStudentInCourse(Guid courseId, Guid studentId)
+- void WithdrawStudentFromCourse(Guid courseId, Guid studentId)
+
+**Grades**
+- void SetGrade(GradeValue value, Guid courseId, Guid studentId)
+- void RemoveGrade(Guid courseId, Guid studentId)
+- List\<Grade\> GetGradesForStudent(Guid studentId)
+
+**Validation Rules**
+- Throw exceptions if:
+	- Course or student does not exist
+	- Student is not enrolled
+	- Duplicate enrollment occurs
+
+ 
+## Part 7 – Console Application
+Create a console program that interacts with the School class.
+
+### Display
+- Display students
+- Display teachers
+- Display courses
+- Display grades
+
+### Add
+- Add student
+- Add teacher
+- Add course
+
+### Withdraw / Remove
+- Withdraw student
+- Remove course
+- Withdraw student from course
+
+### Grades
+- Set grade
+- Remove grade
+- Show grades for a student
+
+
+### Menu Structure (Recommended)
+**Main Menu**
+1. Display
+2. Add
+3. Withdraw / Remove
+4. Grades
+5. Exit
+
+Each option opens a sub-menu.
+
