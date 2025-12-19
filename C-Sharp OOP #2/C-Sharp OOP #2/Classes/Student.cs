@@ -1,36 +1,22 @@
 ﻿namespace C_Sharp_OOP__2.Classes
 {
-    internal class Student
+    internal class Student: Person
     {
         // Properties
         public Guid StudentId { get; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public DateTime DateOfBirth { get; set; }
 
 
         // Constructors
-        public Student(string firstName, string lastName, DateTime dateOfBirth)
+        public Student(string firstName, string lastName, DateTime dateOfBirth): base(firstName, lastName, dateOfBirth)
         {
             StudentId = Guid.NewGuid();
-            Firstname = firstName;
-            Lastname = lastName;
-            DateOfBirth = dateOfBirth;
         }
+
 
         // Methods
         public override string ToString()
         {
             return $"Name: {Firstname} {Lastname} \nDate of birth: {DateOfBirth.ToShortDateString()}  \nStudent ID: {StudentId}";
-        }
-
-        public int GetAge()
-        {
-            int age = DateTime.Now.Year - DateOfBirth.Year;
-
-            if (DateTime.Now.Month > DateOfBirth.Month) return age;
-            else if (DateTime.Now.Month == DateOfBirth.Month && DateTime.Now.Day >= DateOfBirth.Day) return age;
-            else return age - 1;
         }
     }
 }
