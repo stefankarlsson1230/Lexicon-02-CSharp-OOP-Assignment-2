@@ -1,4 +1,4 @@
-# C# OOP Assignment 2 - The school application 
+﻿# C# OOP Assignment 2 - The school application 
 **Updated and clarified by ChatGPT**
 
 ## Design principles & rules
@@ -6,7 +6,7 @@
 Before starting, students must follow these rules:
 
 ### Separation of Concerns
-- **Domain classes (Parts 1�6)** must not use Console, Console.WriteLine, or any UI logic.
+- **Domain classes (Parts 1–6)** must not use Console, Console.WriteLine, or any UI logic.
 - **All business logic** must be handled by the School class.
 - The **console application (Part 7)** is presentation-only.
 
@@ -34,7 +34,7 @@ The assignment is divided into parts. You are expected to refactor and improve y
 code as you go. This is a natural part of programming.
 
 **Important:**
-Parts 1�6 must contain *no console input or output*.
+Parts 1–6 must contain *no console input or output*.
 Only Part 7 may use Console.
 
 ### Overview of Classes
@@ -47,7 +47,7 @@ Only Part 7 may use Console.
 
 Create a folder named **Classes**, and place each class in its own file.
 
-## Part 1 � Student Class
+## Part 1 – Student Class
 
 ### Properties
 - Guid StudentId
@@ -60,7 +60,38 @@ Create a folder named **Classes**, and place each class in its own file.
 	- Accepts first name, last name, and date of birth
 	- Automatically generates StudentId
 - **int GetAge()**
-	- Returns the student�s exact age in years
+	- Returns the student’s exact age in years
 - **override string ToString()**
 	- Returns full name, date of birth, and ID in a readable format
+
+
+## Part 2 – Teacher Class
+
+### Properties
+- Guid TeacherId
+- string FirstName
+- string LastName
+- DateTime DateOfBirth
+
+### Methods
+- Same as Student:
+	- Constructor
+	- GetAge()
+	- ToString()
+
+## Part 3 – Course Class
+
+### Properties
+- Guid CourseId
+- string Name
+- Teacher Teacher
+- List\<Student\> Students (read-only list)
+
+### Constructor
+- Accepts course name and teacher
+- Automatically generates CourseId
+- Initializes student list
+
+⚠️ **Important:**
+Students should only be added or removed via the School class.
 
