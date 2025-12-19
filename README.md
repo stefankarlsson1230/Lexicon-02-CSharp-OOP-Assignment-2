@@ -1,7 +1,7 @@
 # C# OOP Assignment 2 - The school application 
 **Updated and clarified by ChatGPT**
 
-## 1. Design principles & rules
+## Design principles & rules
 
 Before starting, students must follow these rules:
 
@@ -24,4 +24,43 @@ Before starting, students must follow these rules:
 	- ArgumentException
 	- InvalidOperationException
 - Custom exceptions are optional (bonus).
+
+
+## Assignment Specification
+In this assignment, you will create a program that models a school system. The school 
+contains students, teachers, courses, and grades, and manages how they interact.
+
+The assignment is divided into parts. You are expected to refactor and improve your 
+code as you go. This is a natural part of programming.
+
+**Important:**
+Parts 1–6 must contain *no console input or output*.
+Only Part 7 may use Console.
+
+### Overview of Classes
+- Person (base class)
+- Student
+- Teacher
+- Course
+- Grade
+- School
+
+Create a folder named **Classes**, and place each class in its own file.
+
+## Part 1 – Student Class
+
+### Properties
+- Guid StudentId
+- string FirstName
+- string LastName
+- DateTime DateOfBirth
+
+### Methods
+- **Constructor**
+	- Accepts first name, last name, and date of birth
+	- Automatically generates StudentId
+- **int GetAge()**
+	- Returns the student’s exact age in years
+- **override string ToString()**
+	- Returns full name, date of birth, and ID in a readable format
 
