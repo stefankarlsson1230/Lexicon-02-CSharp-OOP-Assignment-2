@@ -95,3 +95,28 @@ Create a folder named **Classes**, and place each class in its own file.
 ⚠️ **Important:**
 Students should only be added or removed via the School class.
 
+
+## Part 4 – Grade Class
+
+### Enum
+	```
+	enum GradeValue
+	{
+		A, B, C, D, E, F
+	}
+	```
+
+### Properties
+- Guid GradeId
+- Student Student
+- Course Course
+- GradeValue Value
+- DateTime DateAcquired
+
+### Methods
+- **Constructor**
+	- Accepts student, course, and grade value
+- **override string ToString()**
+	- Returns grade and a short message depending on the value
+	- Use a switch statement
+
