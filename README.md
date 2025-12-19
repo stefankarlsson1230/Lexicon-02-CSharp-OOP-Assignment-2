@@ -99,12 +99,12 @@ Students should only be added or removed via the School class.
 ## Part 4 – Grade Class
 
 ### Enum
-	```
+
 	enum GradeValue
 	{
 		A, B, C, D, E, F
 	}
-	```
+
 
 ### Properties
 - Guid GradeId
