@@ -6,25 +6,25 @@
         public Guid GradeId { get; }
         public Course Course { get; }
         public Student Student { get; }
-        public DateTime DateAcquired { get; set; }
-        public GradeValue GradeAcquired { get; set; }  
+        public DateTime DateAcquired { get; }
+        public GradeValue Value { get; }  
 
 
         // Constructors
-        public Grade(Course course, Student student, GradeValue gradeAquired)
+        public Grade(Course course, Student student, GradeValue value)
         {
             GradeId = Guid.NewGuid();
             Course = course;
             Student = student;
             DateAcquired = DateTime.Now;
-            GradeAcquired = gradeAquired;
+            Value = value;
         }
 
 
         // Methods
         public override string ToString()
         {
-            return GradeAcquired switch
+            return Value switch
             {
                 GradeValue.A => "A — Excellent: Outstanding performance; exceeds expectations with consistent accuracy and depth.",
                 GradeValue.B => "B — Good: Strong performance; meets expectations with minor areas for improvement.",
@@ -38,6 +38,6 @@
     }
 
     // Enums
-    public enum GradeValue { A, B, C, D, E, F}
+    public enum GradeValue { A, B, C, D, E, F }
 
 }

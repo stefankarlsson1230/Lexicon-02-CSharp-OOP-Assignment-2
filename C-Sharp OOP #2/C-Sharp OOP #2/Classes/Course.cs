@@ -6,16 +6,16 @@
         public Guid CourseId { get; }
         public string Name { get; set; }
         public Teacher Teacher { get; set; }
-        public List<Student> Students { get; set; }
+        public List<Student> Students { get; }
 
 
         // Constructor
-        public Course (string name, Teacher teacher, List<Student> students)
+        public Course (string name, Teacher teacher)
         {
             CourseId = Guid.NewGuid();
             Name = name;
             Teacher = teacher;
-            Students = students;
+            Students = new List<Student>();
         }
     }
 }

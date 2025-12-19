@@ -25,5 +25,10 @@
             else if (DateTime.Now.Month == DateOfBirth.Month && DateTime.Now.Day >= DateOfBirth.Day) return age;
             else return age - 1;
         }
+
+        public override string ToString()
+        {
+            return $"Name: {Firstname} {Lastname} \nDate of birth: {DateOfBirth.ToShortDateString()}";
+        }
     }
 }
